@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a project originally for class EEE 5022 at National Taiwan University.  
+This is a project originally for EEE 5022 at National Taiwan University.  
 It implements an image filter/displayer chip that stores an input image into on-chip SRAM.  
 It can then process a region of the saved image and display the processed region in raster-scan order. 
 <p align="center">
@@ -29,6 +29,10 @@ Top module: ipdc.v
 
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_spec.png" width=60% height=60%>
+</p>
+
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_mode.PNG" width=60% height=60%>
 </p>
 
 ## Supported Functions
@@ -92,3 +96,34 @@ The filter is a 3x3 kernel. It identifies the pixels with higher intensity than 
 The chip operates Census transform to R-channel, G-channel, B-channel, separately.  
 The image is zero-padded for Census Transform.  
 The values of original pixels will not be changed.  
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_census_transform.PNG" width=48% height=48%>
+</p>
+
+## Pipeline Design
+To meet the latency standard, the critical path, which is the datapath for median filter has a pipeline design similar to that of  
+"Hossein Zamani HosseinAbadi, Shadrokh Samavi, and Nader Karimi. 2013. Image Noise Reduction by Low Complexity Hardware Median Filter".  
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_census_transform.PNG" width=48% height=48%>
+</p>
+After implementation and static timing analysis, only the level 2 pipeline stage in the image above is used in the final design to save the area of 9 registers in level 1 stage.
+
+## Testing 
+A testbed_temp.v were written by myself to verify the functionality of the chip.  
+However, note that the SRAM module used in this poject isn't provided in this repo.  
+Therefore, the testing will only work properly if you have the SRAM module.  
+The SRAM module: High-Speed Single-Port Synchronous Flex-Repair SRAM with Redundancy, sram_256x8  
+Process Technology: TSMC CL013G  
+
+RTL simulation: (replace tb* with tb0/tb1/tb2/tb3)
+```
+$ ncverilog -f rtl_01.f +notimingchecks +access+r +define+tb*
+```
+Gate-level simulation:
+```
+ncverilog -f rtl_03.f +ncmaxdelays +define+SDF+tb* +access+r
+```
+Post layout simulation: (note that tsmc13_neg.v isn't provided in this repo)
+```
+ncverilog testbed_temp.v ipdc_pr.v tsmc13_neg.v +ncmaxdelays +define+SDF+tb* +access+r
+```
