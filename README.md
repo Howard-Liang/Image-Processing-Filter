@@ -146,7 +146,7 @@ LVS Check
 
 Report
 <p align="center">
-<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_layout_result.PNG" width=40% height=40%>
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_layout_result.PNG" width=60% height=60%>
 </p>
 
 
