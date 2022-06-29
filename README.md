@@ -71,8 +71,24 @@ EX. scaling up: 1x1 --> 2x2
 </p>
 
 ◆ Median filter 
-For this operation the chip perform median filtering on the display region.  
+For this operation the chip performs median filtering on the display region.  
 The filter is a 3x3 kernel. It results in a median of the set of pixel value.  
-It operate median filtering to R-channel, G-channel, B-channel, separately.  
+The chip operates median filtering to R-channel, G-channel, B-channel, separately.  
 The image is zero-padded for median filter operation.  
 The values of original pixels will not be changed.
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_median_filter.PNG" width=40% height=40%>
+</p>
+
+◆ YCbCr display  
+Estimated YCbCr calculation:  
+Y = 0.25R + 0.625G  
+Cb = − 0.125R − 0.25G + 0.5B + 128  
+Cr = 0.5R − 0.375G − 0.125B + 128  
+
+◆ Census transform  
+For this operation the chip performs Census transform on the display region.  
+The filter is a 3x3 kernel. It identifies the pixels with higher intensity than the center pixel.  
+The chip operates Census transform to R-channel, G-channel, B-channel, separately.  
+The image is zero-padded for Census Transform.  
+The values of original pixels will not be changed.  
