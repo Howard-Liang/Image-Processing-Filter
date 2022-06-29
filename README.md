@@ -109,7 +109,45 @@ To meet the latency standard, the critical path, which is the datapath for media
 After implementation and static timing analysis, only the level 2 pipeline stage in the image above is used in the final design to save the area of 9 registers in level 1 stage.
 
 ## APR Result
+Clock Tree Debugger
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_cct_debugger.PNG" width=40% height=40%>
+</p>
 
+Clock Tree Routing
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_cct_route.PNG" width=40% height=40%>
+</p>
+
+Layout
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_layout.PNG" width=40% height=40%>
+</p>
+
+STA Setup
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_apr_sta_setup.PNG" width=40% height=40%>
+</p>
+
+STA Hold
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_apr_sta_hold.PNG" width=40% height=40%>
+</p>
+
+DRC Check
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_drc.PNG" width=40% height=40%>
+</p>
+
+LVS Check
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_lvs.PNG" width=40% height=40%>
+</p>
+
+Report
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_layout_result.PNG" width=40% height=40%>
+</p>
 
 
 ## Testing 
