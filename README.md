@@ -44,3 +44,5 @@ The default coordinate of the origin is at 0.
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_origin.PNG" width=25% height=25%>
 </p>
+
+◆ Display region up/down/left/right shifting  
