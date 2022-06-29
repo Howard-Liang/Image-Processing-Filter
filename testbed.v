@@ -32,7 +32,7 @@
     `define GOLDEN_LEN 320
 `endif
 
-`define SDFFILE "./ipdc_pr.sdf"  // Modify your sdf file name
+`define SDFFILE "./APR/ipdc_pr.sdf"  // Modify your sdf file name
 
 
 module testbed;
