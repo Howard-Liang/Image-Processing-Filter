@@ -6,7 +6,7 @@ This is a project originally for class EEE 5022 at National Taiwan University.
 It implements an image filter/displayer chip that stores an input image into on-chip SRAM.  
 It can then process a region of the saved image and display the processed region in raster-scan order. 
 <p align="center">
-<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_block_diagram.PNG" width=60% height=60%>
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_effect.PNG" width=60% height=60%>
 </p>
 
 Several process functions are supported:  
@@ -18,6 +18,12 @@ Several process functions are supported:
 ◆ Census transform  
 
 ## Block Diagram
+
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_block_diagram.PNG" width=60% height=60%>
+</p>
+
+## Specification
 
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_block_diagram.PNG" width=60% height=60%>
