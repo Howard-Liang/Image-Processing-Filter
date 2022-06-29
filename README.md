@@ -23,9 +23,10 @@ Several process functions are supported:
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_block_diagram.PNG" width=60% height=60%>
 </p>
 
+Top module: ipdc.v
+
 ## Specification
 
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_spec.png" width=60% height=60%>
 </p>
-
