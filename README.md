@@ -152,7 +152,7 @@ Report
 
 ## Testing 
 A testbed_temp.v were written by myself to verify the functionality of the chip.  
-However, note that the SRAM module used in this poject isn't provided in this repo.  
+However, note that the SRAM module used in the poject isn't provided in this repo.  
 Therefore, the testing will only work properly if you have the SRAM module.  
 The SRAM module: High-Speed Single-Port Synchronous Flex-Repair SRAM with Redundancy, sram_256x8  
 Process Technology: TSMC CL013G  
@@ -165,7 +165,7 @@ Gate-level simulation:
 ```
 $ ncverilog -f rtl_03.f +ncmaxdelays +define+SDF+tb* +access+r
 ```
-Post layout simulation: (note that tsmc13_neg.v also isn't provided in this repo)
+Post layout simulation: (note that tsmc13_neg.v isn't provided in this repo as well)
 ```
 $ ncverilog testbed_temp.v ipdc_pr.v tsmc13_neg.v +ncmaxdelays +define+SDF+tb* +access+r
 ```
