@@ -42,7 +42,23 @@ The design includes 3 on-chip SRAM, each stores the RGB pixel value respectively
 
 The default coordinate of the origin is at 0.
 <p align="center">
-<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_origin.PNG" width=25% height=25%>
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_origin.PNG" width=35% height=35%>
 </p>
 
 ◆ Display region up/down/left/right shifting  
+EX. origin right shift (i_op_mode = 4’b0100)
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_right_shift_yes.PNG" width=40% height=40%>
+</p>
+
+If output of display exceeds the image boundary, retain the same origin point.
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_right_shift_no.PNG" width=40% height=40%>
+</p>
+
+◆ Display region scaling-down/up  
+The chip can display the image in one of the 3 sizes: 4x4, 2x2, 1x1.  
+That means if the display size now is 4x4, scaling up will retain the same display size.  
+If the display size is now 1x1, scaling down will also retain the same display size.  
+EX. scaling down: 4x4 --> 2x2
+EX. scaling up: 2x2 --> 4x4
