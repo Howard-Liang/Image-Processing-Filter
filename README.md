@@ -74,7 +74,7 @@ EX. scaling up: 1x1 --> 2x2
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_scale_up.PNG" width=40% height=40%>
 </p>
 
-◆ Median filter 
+◆ Median filter  
 For this operation the chip performs median filtering on the display region.  
 The filter is a 3x3 kernel. It results in a median of the set of pixel value.  
 The chip operates median filtering to R-channel, G-channel, B-channel, separately.  
