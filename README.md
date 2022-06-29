@@ -34,7 +34,10 @@ Top module: ipdc.v
 ## Process Functions
 
 ◆ Input image loading  
-The input image is given in raster-scan order.
+The input image is given in raster-scan order.  
+The design includes 3 on-chip SRAM, each stores the RGB pixel value respectively of the input image.
 <p align="center">
-<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_spec.png" width=60% height=60%>
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_image.PNG" width=20% height=20%>
 </p>
+
+The default coordinate of the origin is at 0.
