@@ -3,16 +3,16 @@
 ## Description
 
 This is a project originally for EEE 5022 at National Taiwan University.  
-It implements an image filter/displayer chip that stores an input image into on-chip SRAM.  
-It can then process a region of the saved image and display the processed region in raster-scan order. 
+It implements an image processing filter/displayer chip that stores an input image into on-chip SRAM.  
+It can then process a region of the saved image and display the region in raster-scan order. 
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_effect.PNG" width=60% height=60%>
 </p>
 
-Several process functions are supported:  
+Several operations are supported:  
 ◆ Input image loading  
 ◆ Display region up/down/left/right shifting  
-◆ Display region scaling-down/up  
+◆ Display region down/up scaling  
 ◆ Median filter  
 ◆ YCbCr display  
 ◆ Census transform  
@@ -23,7 +23,8 @@ Several process functions are supported:
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_block_diagram.PNG" width=60% height=60%>
 </p>
 
-Top module: ipdc.v
+Top module: ipdc.v  
+Testing module: testbed.v
 
 ## Specification
 
@@ -38,13 +39,13 @@ Top module: ipdc.v
 ## Supported Functions
 
 ◆ Input image loading  
-The input image is given in raster-scan order.  
-The design includes 3 on-chip SRAM, each stores the R/G/B-channel's pixel values respectively of the input image.
+The input image should be given in raster-scan order.  
+The design includes 3 on-chip SRAMs, each stores the R/G/B-channel's pixel values respectively of the input image.
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_image.PNG" width=20% height=20%>
 </p>
 
-The default coordinate of the origin is at 0.
+The default coordinate of the display region origin is at 0.
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_origin.PNG" width=35% height=35%>
 </p>
@@ -60,7 +61,7 @@ If output of display exceeds the image boundary, retain the same origin point.
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_right_shift_no.PNG" width=40% height=40%>
 </p>
 
-◆ Display region scaling-down/up  
+◆ Display region down/up scaling  
 The chip can display the image in one of the 3 sizes: 4x4, 2x2, 1x1.  
 That means if the display size now is 4x4, scaling up will retain the same display size.  
 If the display size is now 1x1, scaling down will also retain the same display size.  
@@ -101,20 +102,20 @@ The values of original pixels will not be changed.
 </p>
 
 ## Pipeline Design
-To meet the latency standard, the critical path, which is the datapath for median filter has a pipeline design similar to that of  
+To meet the latency requirement, the critical path, which is the datapath for median filter has a pipeline design similar to that of  
 "Hossein Zamani HosseinAbadi, Shadrokh Samavi, and Nader Karimi. 2013. Image Noise Reduction by Low Complexity Hardware Median Filter".  
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_median_pipeline.PNG" width=35% height=35%>
 </p>
-After implementation and static timing analysis, only the level 2 pipeline stage in the image above is used in the final design to save the area of 9 registers in level 1 stage and the area of 1 register in level 3 stage.
+After implementation and some static timing analyses, only the level 2 pipeline stage in the image above is used in the final design. This can save the area of 9 registers in level 1 stage and 1 register in level 3 stage.
 
 ## APR Result
-Clock Tree Debugger
+Clock tree debugger snapshot
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_cct_debugger.PNG" width=40% height=40%>
 </p>
 
-Clock Tree Routing
+Clock tree routing snapshot
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_cct_route.PNG" width=40% height=40%>
 </p>
@@ -124,22 +125,22 @@ Layout
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_layout.PNG" width=40% height=40%>
 </p>
 
-STA Setup
+STA fot setup time
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_apr_sta_setup.PNG" width=40% height=40%>
 </p>
 
-STA Hold
+STA for hold time
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_apr_sta_hold.PNG" width=40% height=40%>
 </p>
 
-DRC Check
+DRC check
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_drc.PNG" width=40% height=40%>
 </p>
 
-LVS Check
+LVS check
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_lvs.PNG" width=40% height=40%>
 </p>
