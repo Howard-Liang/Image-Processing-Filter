@@ -104,9 +104,13 @@ The values of original pixels will not be changed.
 To meet the latency standard, the critical path, which is the datapath for median filter has a pipeline design similar to that of  
 "Hossein Zamani HosseinAbadi, Shadrokh Samavi, and Nader Karimi. 2013. Image Noise Reduction by Low Complexity Hardware Median Filter".  
 <p align="center">
-<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_census_transform.PNG" width=48% height=48%>
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_median_pipeline.PNG" width=35% height=35%>
 </p>
 After implementation and static timing analysis, only the level 2 pipeline stage in the image above is used in the final design to save the area of 9 registers in level 1 stage.
+
+## APR Result
+
+
 
 ## Testing 
 A testbed_temp.v were written by myself to verify the functionality of the chip.  
@@ -123,7 +127,7 @@ Gate-level simulation:
 ```
 ncverilog -f rtl_03.f +ncmaxdelays +define+SDF+tb* +access+r
 ```
-Post layout simulation: (note that tsmc13_neg.v isn't provided in this repo)
+Post layout simulation: (note that tsmc13_neg.v also isn't provided in this repo)
 ```
 ncverilog testbed_temp.v ipdc_pr.v tsmc13_neg.v +ncmaxdelays +define+SDF+tb* +access+r
 ```
