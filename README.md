@@ -31,11 +31,11 @@ Top module: ipdc.v
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_spec.png" width=60% height=60%>
 </p>
 
-## Process Functions
+## Supported Functions
 
 ◆ Input image loading  
 The input image is given in raster-scan order.  
-The design includes 3 on-chip SRAM, each stores the RGB pixel value respectively of the input image.
+The design includes 3 on-chip SRAM, each stores the R/G/B-channel's pixel values respectively of the input image.
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_image.PNG" width=20% height=20%>
 </p>
@@ -61,4 +61,18 @@ The chip can display the image in one of the 3 sizes: 4x4, 2x2, 1x1.
 That means if the display size now is 4x4, scaling up will retain the same display size.  
 If the display size is now 1x1, scaling down will also retain the same display size.  
 EX. scaling down: 4x4 --> 2x2
-EX. scaling up: 2x2 --> 4x4
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_scale_down.PNG" width=45% height=45%>
+</p>
+
+EX. scaling up: 1x1 --> 2x2
+<p align="center">
+<img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_scale_up.PNG" width=40% height=40%>
+</p>
+
+◆ Median filter 
+For this operation the chip perform median filtering on the display region.  
+The filter is a 3x3 kernel. It results in a median of the set of pixel value.  
+It operate median filtering to R-channel, G-channel, B-channel, separately.  
+The image is zero-padded for median filter operation.  
+The values of original pixels will not be changed.
