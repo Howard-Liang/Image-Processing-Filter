@@ -106,7 +106,7 @@ To meet the latency standard, the critical path, which is the datapath for media
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_median_pipeline.PNG" width=35% height=35%>
 </p>
-After implementation and static timing analysis, only the level 2 pipeline stage in the image above is used in the final design to save the area of 9 registers in level 1 stage.
+After implementation and static timing analysis, only the level 2 pipeline stage in the image above is used in the final design to save the area of 9 registers in level 1 stage and the area of 1 register in level 3 stage.
 
 ## APR Result
 Clock Tree Debugger
