@@ -1,5 +1,5 @@
 
-module ipdc (                       //Don't modify interface
+module ipdc (                       
 	input         i_clk,
 	input         i_rst_n,
 	input         i_op_valid,
