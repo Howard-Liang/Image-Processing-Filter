@@ -163,9 +163,16 @@ $ ncverilog -f rtl_01.f +notimingchecks +access+r +define+tb*
 ```
 Gate-level simulation:
 ```
-ncverilog -f rtl_03.f +ncmaxdelays +define+SDF+tb* +access+r
+$ ncverilog -f rtl_03.f +ncmaxdelays +define+SDF+tb* +access+r
 ```
 Post layout simulation: (note that tsmc13_neg.v also isn't provided in this repo)
 ```
-ncverilog testbed_temp.v ipdc_pr.v tsmc13_neg.v +ncmaxdelays +define+SDF+tb* +access+r
+$ ncverilog testbed_temp.v ipdc_pr.v tsmc13_neg.v +ncmaxdelays +define+SDF+tb* +access+r
 ```
+## Author
+
+Contributors names and contact info
+
+Hao-Wei, Liang (b07502022@ntu.edu.tw)
+
+If you have any question, please contact me with the email address above.
