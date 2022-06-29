@@ -1,0 +1,89 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ipdc
+Version: R-2020.09-SP5
+Date   : Sat Dec  4 13:06:01 2021
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: valid_buff2_r_reg
+              (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: med1/L6_r_reg[0]
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ipdc               tsmc13_wl10           slow
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.50       0.50
+  valid_buff2_r_reg/CK (DFFSX2)            0.00       0.50 r
+  valid_buff2_r_reg/Q (DFFSX2)             0.56       1.06 f
+  U1799/Y (NOR3X4)                         0.21       1.27 r
+  U2013/Y (INVX12)                         0.15       1.42 f
+  U2174/Y (INVX16)                         0.12       1.54 r
+  U3030/Y (NAND2X1)                        0.12       1.65 f
+  U1784/Y (OAI21XL)                        0.40       2.05 r
+  U3031/Y (NOR2X4)                         0.31       2.36 f
+  U3033/Y (AOI2BB2X2)                      0.23       2.59 r
+  U1975/Y (NAND3X2)                        0.17       2.76 f
+  U3046/Y (NAND4X4)                        0.12       2.88 r
+  U3056/Y (AND2X8)                         0.20       3.08 r
+  U3062/Y (INVX12)                         0.11       3.19 f
+  U2479/Y (MXI2X4)                         0.17       3.36 f
+  U2370/Y (NAND2X2)                        0.17       3.52 r
+  U2369/Y (NAND2X4)                        0.10       3.62 f
+  U1952/Y (NAND3X4)                        0.10       3.72 r
+  U2085/Y (NAND2X4)                        0.09       3.81 f
+  U1951/Y (NAND2X4)                        0.09       3.90 r
+  U3449/Y (NAND2X6)                        0.08       3.98 f
+  U3451/Y (NAND2X8)                        0.08       4.06 r
+  U3452/Y (INVX16)                         0.07       4.13 f
+  U3494/Y (INVX12)                         0.08       4.21 r
+  U3495/Y (MXI2X1)                         0.29       4.49 f
+  U1853/Y (INVXL)                          0.52       5.01 r
+  U2483/Y (NAND2XL)                        0.25       5.26 f
+  U1870/Y (NAND2X1)                        0.25       5.51 r
+  U3502/CO (ACHCINX2)                      0.16       5.67 f
+  U3506/CO (ACHCINX2)                      0.23       5.89 r
+  U1702/Y (INVX1)                          0.15       6.05 f
+  U3512/Y (NAND2BX1)                       0.21       6.26 r
+  U3513/Y (NAND3X2)                        0.16       6.43 f
+  U2209/Y (NAND2X4)                        0.25       6.68 r
+  U3557/Y (MXI2X1)                         0.56       7.24 r
+  U3560/CON (ACHCONX2)                     0.32       7.56 f
+  U2544/Y (NOR2X1)                         0.26       7.82 r
+  U3562/Y (AOI211X1)                       0.17       7.99 f
+  U3565/CO (ACHCINX2)                      0.24       8.22 r
+  U3567/CO (ACHCINX2)                      0.17       8.39 f
+  U2034/CON (ACHCONX2)                     0.19       8.58 r
+  U1672/Y (BUFX6)                          0.23       8.81 r
+  U3576/Y (MX3X1)                          0.34       9.15 r
+  med1/L6_r_reg[0]/D (DFFRX1)              0.00       9.15 r
+  data arrival time                                   9.15
+
+  clock i_clk (rise edge)                  9.00       9.00
+  clock network delay (ideal)              0.50       9.50
+  clock uncertainty                       -0.10       9.40
+  med1/L6_r_reg[0]/CK (DFFRX1)             0.00       9.40 r
+  library setup time                      -0.25       9.15
+  data required time                                  9.15
+  -----------------------------------------------------------
+  data required time                                  9.15
+  data arrival time                                  -9.15
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
