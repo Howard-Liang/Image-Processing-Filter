@@ -167,7 +167,7 @@ $ ncverilog -f rtl_03.f +ncmaxdelays +define+SDF+tb* +access+r
 ```
 Post layout simulation: (note that tsmc13_neg.v isn't provided in this repo as well)
 ```
-$ ncverilog testbed.v ipdc_pr.v tsmc13_neg.v +ncmaxdelays +define+SDF+tb* +access+r
+$ ncverilog testbed.v ./APR/ipdc_pr.v tsmc13_neg.v +ncmaxdelays +define+SDF+tb* +access+r
 ```
 ## Author
 
