@@ -107,7 +107,7 @@ To meet the latency requirement, the critical path, which is the datapath for me
 <p align="center">
 <img src="https://github.com/Howard-Liang/Image-Processing-Filter/blob/main/image/ipdc_median_pipeline.PNG" width=35% height=35%>
 </p>
-After implementation and some static timing analyses, only the level 2 pipeline stage in the image above is used in the final design. This can save the area of 9 registers in level 1 stage and 1 register in level 3 stage.
+After implementation and some static timing analyses, only the level 2 pipeline stage in the image above is used in the final design. This can save the area of 9 registers in level 1 stage and 1 register in level 3 stage, while meeting the latency requirement.
 
 ## APR Result
 Clock tree debugger snapshot
